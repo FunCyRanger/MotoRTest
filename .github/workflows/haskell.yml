@@ -29,6 +29,7 @@ jobs:
       run: | 
         uname -s
         sh ./MROSM_1_script.bash
+      shell: bash
 
 
 #    - name: Cache
