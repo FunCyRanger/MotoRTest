@@ -28,7 +28,8 @@ PREPROCESSOR="uk.me.parabola.mkgmap.reader.osm.boundary.BoundaryPreprocessor"
 
 # MROSM_settings
 # Ubuntu-Linux-Subsystem (Windows 10)
-if [ "$(uname -a)" = *"Microsoft"* ]; then
+if [ "$(uname -a)" = *"Microsoft"* ]
+	then
 
 	#remember $HOME/MROSM is 	
 	#C:\Users\scotti\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\scotti\MROSM
@@ -38,7 +39,8 @@ if [ "$(uname -a)" = *"Microsoft"* ]; then
 		
 	ME="$(whoami)"
 	
-	if [ $ME == "root" ]; then
+	if [ $ME == "root" ]
+		then
 	
 		echo "MROSM: User root wird im Linux-Subsystem nicht unterstützt. Bitte Linux-Subsystem richtig konfigurieren."
 		
@@ -58,7 +60,8 @@ if [ "$(uname -a)" = *"Microsoft"* ]; then
 	wgetdotbar=bar
 
 # Linux: $MROSMDIR = $HOME/MROSM
-elif [ "$(uname -s)" == "Linux" ]; then
+elif [ "$(uname -s)" == "Linux" ]
+	then
 
 	APPSUPP="$MROSMDIR"
 	
@@ -68,7 +71,8 @@ elif [ "$(uname -s)" == "Linux" ]; then
 	echo -e '\033]2;'$bashTITLE'\007'
 
 # macOS: ~/Library/Application\ Support/MROSM
-elif [ "$(uname)" == "Darwin" ]; then
+elif [ "$(uname)" == "Darwin" ]
+	then
 
 	APPSUPP=~/Library/Application\ Support/MROSM
 	
