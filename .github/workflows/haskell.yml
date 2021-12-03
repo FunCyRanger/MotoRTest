@@ -20,7 +20,7 @@ jobs:
 
     - name: Run script
       working-directory: MotoRoute-OpenStreetMap
-      run: ./MROSM_1_script.bash
+      run: stack ./MROSM_1_script.bash
 
 
 #    - name: Cache
