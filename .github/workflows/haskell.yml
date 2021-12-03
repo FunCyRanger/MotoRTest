@@ -22,6 +22,8 @@ jobs:
       working-directory: MotoRoute-OpenStreetMap
       run: | 
         uname -s
+        apt install osmctools
+        apt install default-jre
         sh ./MROSM_1_script.bash
 
 
