@@ -18,12 +18,16 @@ jobs:
         ghc-version: '8.10.3'
         cabal-version: '3.2'
 
+    - name: Install dependencies
+      working-directory: MotoRoute-OpenStreetMap
+      run: | 
+        sudo apt install osmctools
+        sudo apt install default-jre
+        
     - name: Run script
       working-directory: MotoRoute-OpenStreetMap
       run: | 
         uname -s
-        sudo apt install osmctools
-        sudo apt install default-jre
         sh ./MROSM_1_script.bash
 
 
