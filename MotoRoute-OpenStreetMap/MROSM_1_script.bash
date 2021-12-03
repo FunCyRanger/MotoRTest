@@ -28,7 +28,7 @@ PREPROCESSOR="uk.me.parabola.mkgmap.reader.osm.boundary.BoundaryPreprocessor"
 
 # MROSM_settings
 # Ubuntu-Linux-Subsystem (Windows 10)
-if [[ "$(uname -a)" = *"Microsoft"* ]]; then
+if [ "$(uname -a)" = *"Microsoft"* ]; then
 
 	#remember $HOME/MROSM is 	
 	#C:\Users\scotti\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\scotti\MROSM
