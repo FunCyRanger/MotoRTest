@@ -22,6 +22,7 @@ jobs:
         
     - name: Run script
       working-directory: MotoRoute-OpenStreetMap
+#     "bash" command needed before script name
       run: | 
         bash ./MROSM_1_script.bash
       shell: bash
