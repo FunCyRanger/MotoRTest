@@ -13,10 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-haskell@v1
-      with:
-        ghc-version: '8.10.3'
-        cabal-version: '3.2'
 
     - name: Install dependencies
       working-directory: MotoRoute-OpenStreetMap
@@ -27,10 +23,8 @@ jobs:
     - name: Run script
       working-directory: MotoRoute-OpenStreetMap
       run: | 
-        uname -s
-        sh ./MROSM_1_script.bash
+        bash ./MROSM_1_script.bash
       shell: bash
-
 
 #    - name: Cache
 #      uses: actions/cache@v1
