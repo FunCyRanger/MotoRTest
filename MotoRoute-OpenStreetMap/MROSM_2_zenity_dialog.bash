@@ -33,7 +33,8 @@ if [ -f "$APPSUPP/MROSM_settings" ]; then
 	obSTYLE=$input16
 
 	chkSETTINGS=$input17
-
+else
+	echo "MROSM_2_zenity_dialog.bash: MROSM_settings not found"
 fi
 
 if [ "$obPROJ" == "" ]; then
