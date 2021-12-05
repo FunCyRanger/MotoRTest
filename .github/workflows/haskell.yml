@@ -38,7 +38,7 @@ jobs:
         wget -nc https://my.cloudme.com/v1/ws2/:scotti/:MotoRouteOpenStreetMap/mrosm-style-r022.zip
         wget -nc http://download.geofabrik.de/europe/liechtenstein-latest.osm.pbf
         wget -nc http://download.geofabrik.de/europe/liechtenstein.poly
-        dir -l
+        dirs -l
         ls
  #       wget -nc http://osm.thkukuk.de/data/bounds-latest.zip
  #       wget -nc http://osm.thkukuk.de/data/sea-latest.zip
