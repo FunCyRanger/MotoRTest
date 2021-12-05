@@ -6,9 +6,10 @@ export TERM=${TERM:-dumb}
 export PATH=.:$PATH
 
 # dir-variables
-MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-MYDIRwin=$(echo `wslpath -w "$MYDIR" 2> /dev/null`)
-MROSMDIR="$HOME"
+# MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# MYDIRwin=$(echo `wslpath -w "$MYDIR" 2> /dev/null`)
+# MROSMDIR="$HOME"
+MROSMDIR="$PWD"
 
 # variables
 OSMUPDATE=0.4.5
