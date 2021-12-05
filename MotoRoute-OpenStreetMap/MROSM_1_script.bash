@@ -153,7 +153,9 @@ elif [ "$(uname -s)" == "Linux" ] || [ "$(uname)" == "Darwin" ]; then
 		fi
 		
 		cp "$MYDIR"/MROSM_settings_default "$APPSUPP"/MROSM_settings
-	
+		echo "No settings file found, default sttings copied"
+	else
+		echo "Settings found"
 	fi
 
 fi
