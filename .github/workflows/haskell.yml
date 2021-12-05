@@ -30,7 +30,7 @@ jobs:
     - name: wget tools
       working-directory: MotoRoute-OpenStreetMap
       run: | 
-        mkdir wget
+        mkdir -p wget
         cd wget
         wget -nc https://www.mkgmap.org.uk/download/mkgmap-r4827.zip
         wget -nc https://www.mkgmap.org.uk/download/splitter-r645.zip
