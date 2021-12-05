@@ -1,18 +1,18 @@
-./
-./wget/liechtenstein-latest.osm.pbf
+.
+wget/liechtenstein-latest.osm.pbf
 0
 0
 0
-./wget/liechtenstein.poly
+wget/liechtenstein.poly
 
-./wget/bounds-latest.zip
-./wget/sea-latest.zip
-./wget/splitter-r645.zip
-./wget/mkgmap-r4827.zip
+wget/bounds-latest.zip
+wget/sea-latest.zip
+wget/splitter-r645.zip
+wget/mkgmap-r4827.zip
 0
 0
 
 latin1
-./wget/mrosm-style-r022.zip
+wget/mrosm-style-r022.zip
 1
 0
