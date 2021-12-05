@@ -2,6 +2,8 @@
 
 # Gernot Skottke, 05.05.2021
 
+echo "Execute MROSM_3_preparation.bash"
+
 # Include MROSM_functions.bash
 source "$MYDIR"/MROSM_functions.bash
 
