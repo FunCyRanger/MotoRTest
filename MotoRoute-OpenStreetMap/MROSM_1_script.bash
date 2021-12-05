@@ -65,6 +65,7 @@ elif [ "$(uname -s)" == "Linux" ]
 	then
 
 	APPSUPP="$MROSMDIR"
+	echo "AppSupp4Linux: $APPSUPP"
 	
 	wgetdotbar=bar
 
