@@ -9,7 +9,7 @@ if [ -f "$APPSUPP/MROSM_settings" ]; then
 	i=1
 	while read LINE
 	do
-		echo "$i"":""${LINE}"
+		# echo "$i"":""${LINE}"
 		# declare input"$i"="${LINE}"
 		inputx[$i]="${LINE}"
 		((i+=1))
@@ -41,20 +41,20 @@ fi
 if [ "$obPROJ" == "" ]; then
 
 	obPROJ="$HOME"
+	echo "MROSM: Bitte Projekt-Ordner/Laufwerk auswählen"
+
+	obPROJ=$(zenity --file-selection \
+		--title='Auswahl Projekt-Ordner/Laufwerk (MROSM)' \
+		--directory --filename="$obPROJ" 2> /dev/null)
+		
+	if [ "$obPROJ" == "" ]; then
+
+		obPROJ="$APPSUPP"
+	
+	fi
 	
 fi
 
-echo "MROSM: Bitte Projekt-Ordner/Laufwerk auswählen"
-
-obPROJ=$(zenity --file-selection \
-	--title='Auswahl Projekt-Ordner/Laufwerk (MROSM)' \
-	--directory --filename="$obPROJ" 2> /dev/null)
-
-if [ "$obPROJ" == "" ]; then
-
-	obPROJ="$HOME/MROSM"
-
-fi
 
 echo "MROSM: Projekt-Ordner/Laufwerk $obPROJ"
 echo ""
