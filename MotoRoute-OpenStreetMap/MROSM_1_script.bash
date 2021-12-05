@@ -11,6 +11,7 @@ export PATH=.:$PATH
 # MROSMDIR="$HOME"
 MROSMDIR="$PWD"
 echo "$MROSMDIR"
+MYDIR=$MROSMDIR
 
 # variables
 OSMUPDATE=0.4.5
