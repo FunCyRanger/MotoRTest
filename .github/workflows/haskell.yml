@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/cache@v2
       with:
-        path: /home/runner/work/MotoRTest/MotoRTest/MotoRoute-OpenStreetMap
+        path: /home/runner/work/MotoRTest/MotoRTest/MotoRoute-OpenStreetMap/wget
         # Look to see if there is a cache hit for the corresponding requirements file
         key: zip
         restore-keys: |
@@ -30,6 +30,8 @@ jobs:
     - name: wget tools
       working-directory: MotoRoute-OpenStreetMap
       run: | 
+        mkdir wget
+        cd wget
         wget -nc https://www.mkgmap.org.uk/download/mkgmap-r4827.zip
         wget -nc https://www.mkgmap.org.uk/download/splitter-r645.zip
         wget -nc https://my.cloudme.com/v1/ws2/:scotti/:MotoRouteOpenStreetMap/mrosm-style-r022.zip
