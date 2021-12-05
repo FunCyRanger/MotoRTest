@@ -10,6 +10,7 @@ export PATH=.:$PATH
 # MYDIRwin=$(echo `wslpath -w "$MYDIR" 2> /dev/null`)
 # MROSMDIR="$HOME"
 MROSMDIR="$PWD"
+echo "$MROSMDIR"
 
 # variables
 OSMUPDATE=0.4.5
