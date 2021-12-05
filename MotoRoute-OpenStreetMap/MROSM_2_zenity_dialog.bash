@@ -2,6 +2,8 @@
 
 # Gernot Skottke, 04.05.2021
 
+echo "Execute MROSM_2_zenity_dialog.bash"
+
 # Read selection from file 
 # Linux: $HOME/MROSM/MROSM_settings
 if [ -f "$APPSUPP/MROSM_settings" ]; then 
@@ -353,9 +355,11 @@ fi
 echo "MROSM: Bounds $obBOUNDS"
 
 echo ""
-echo "MROSM: Bitte sea*.zip auswählen"
+
 
 if [ "$obSEA" == "" ]; then
+
+	echo "MROSM: Bitte sea*.zip auswählen"
 
 	obSEA=$(zenity --file-selection \
 		--title="Auswahl sea*.zip" \
