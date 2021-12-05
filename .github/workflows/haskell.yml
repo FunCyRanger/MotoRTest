@@ -24,8 +24,9 @@ jobs:
     - name: Install dependencies
       working-directory: MotoRoute-OpenStreetMap
       run: | 
-        sudo apt install osmctools
-        sudo apt install default-jre
+        sudo apt-get install osmctools
+        sudo apt-get install default-jre
+        sudo apt-get install unzip
         
     - name: wget tools
       working-directory: MotoRoute-OpenStreetMap
