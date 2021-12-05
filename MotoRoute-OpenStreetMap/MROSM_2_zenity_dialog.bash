@@ -58,13 +58,15 @@ fi
 
 echo "MROSM: Projekt-Ordner/Laufwerk $obPROJ"
 echo ""
-echo "MROSM: Bitte .osm.pbf Datei auswählen"
 
-obFILE=$(zenity --file-selection \
-	--title='Auswahl .osm.pbf Datei' \
-	--file-filter='*.osm.pbf' --filename="$obFILE" 2> /dev/null)
 
 if [ "$obFILE" == "" ]; then
+
+	echo "MROSM: Bitte .osm.pbf Datei auswählen"
+
+	obFILE=$(zenity --file-selection \
+		--title='Auswahl .osm.pbf Datei' \
+		--file-filter='*.osm.pbf' --filename="$obFILE" 2> /dev/null)
 
 	zenity --warning \
 		--title="MotoRoute OpenStreetMap »Kartenbäckerei«" \
