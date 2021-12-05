@@ -2,6 +2,8 @@
 
 # Gernot Skottke, 05.05.2021
 
+echo "Execute MROSM_1_script.bash"
+
 export TERM=${TERM:-dumb}
 export PATH=.:$PATH
 
