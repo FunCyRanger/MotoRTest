@@ -148,127 +148,128 @@ else
 
 fi
 
-echo "MROSM: Bitte Optionen auswählen"
+if ! [ "$(uname -s)" == "Linux" ]; then
+	echo "MROSM: Bitte Optionen auswählen"
 
-chk1=$(zenity --list --checklist \
-	--text="$obFILE" \
-	--column="Auswahl" \
-	--column="Option" \
-	$setUPDATE "$txtUPDATE" \
-	$setKEEPTEMP "$txtKEEPTEMP" \
-	$setCUTPOLY "$txtCUTPOLY" \
-	$setKEEPTILES "$txtKEEPTILES" \
-	$setGMAPSUPP "$txtGMAPSUPP" \
-	$setSETTINGS "$txtSETTINGS" \
-	False "$txtSHUTDOWN" \
-	--title="MotoRoute OpenStreetMap »Kartenbäckerei«" \
-	--width=500 --height=350 2> /dev/null)
+	chk1=$(zenity --list --checklist \
+		--text="$obFILE" \
+		--column="Auswahl" \
+		--column="Option" \
+		$setUPDATE "$txtUPDATE" \
+		$setKEEPTEMP "$txtKEEPTEMP" \
+		$setCUTPOLY "$txtCUTPOLY" \
+		$setKEEPTILES "$txtKEEPTILES" \
+		$setGMAPSUPP "$txtGMAPSUPP" \
+		$setSETTINGS "$txtSETTINGS" \
+		False "$txtSHUTDOWN" \
+		--title="MotoRoute OpenStreetMap »Kartenbäckerei«" \
+		--width=500 --height=350 2> /dev/null)
 
-if [[ "$chk1" == *"$txtUPDATE"* ]]; then
+	if [[ "$chk1" == *"$txtUPDATE"* ]]; then
 
-	chkUPDATE=1
+		chkUPDATE=1
 
-else
+	else
 
-	chkUPDATE=0
+		chkUPDATE=0
 
+	fi
+
+	echo "MROSM: ($chkUPDATE) $txtUPDATE"
+
+	if [[ "$chk1" == *"$txtKEEPTEMP"* ]]; then
+
+		chkKEEPTEMP=1
+
+	else
+
+		chkKEEPTEMP=0
+
+	fi
+
+	echo "MROSM: ($chkKEEPTEMP) $txtKEEPTEMP"
+
+	if [[ "$chk1" == *"$txtCUTPOLY"* ]]; then
+
+		chkCUTPOLY=1
+
+	else
+
+		chkCUTPOLY=0
+
+	fi
+
+	echo "MROSM: ($chkCUTPOLY) $txtCUTPOLY"
+
+	if [[ "$chk1" == *"$txtSPLITTER"* ]]; then
+
+		chkSPLITTER=1
+
+	else
+
+		chkSPLITTER=0
+
+	fi
+
+	echo "MROSM: ($chkKEEPTILES) $txtKEEPTILES"
+
+	if [[ "$chk1" == *"$txtGMAPSUPP"* ]]; then
+
+		chkGMAPSUPP=1
+
+	else
+
+		chkGMAPSUPP=0
+
+	fi
+
+	echo "MROSM: ($chkGMAPSUPP) $txtGMAPSUPP"
+
+	if [[ "$chk1" == *"$txtSETTINGS"* ]]; then
+
+		chkSETTINGS=1
+
+	else
+
+		chkSETTINGS=0
+
+	fi
+
+	echo "MROSM: ($chkSETTINGS) $txtSETTINGS"
+
+	if [[ "$chk1" == *"$txtSHUTDOWN"* ]]; then
+
+		chkSHUTDOWN=1
+
+	else
+
+		chkSHUTDOWN=0
+
+	fi
+
+	echo "MROSM: ($chkSHUTDOWN) $txtSHUTDOWN"
+	echo ""
 fi
-
-echo "MROSM: ($chkUPDATE) $txtUPDATE"
-
-if [[ "$chk1" == *"$txtKEEPTEMP"* ]]; then
-
-	chkKEEPTEMP=1
-
-else
-
-	chkKEEPTEMP=0
-
-fi
-
-echo "MROSM: ($chkKEEPTEMP) $txtKEEPTEMP"
-
-if [[ "$chk1" == *"$txtCUTPOLY"* ]]; then
-
-	chkCUTPOLY=1
-
-else
-
-	chkCUTPOLY=0
-
-fi
-
-echo "MROSM: ($chkCUTPOLY) $txtCUTPOLY"
-
-if [[ "$chk1" == *"$txtSPLITTER"* ]]; then
-
-	chkSPLITTER=1
-
-else
-
-	chkSPLITTER=0
-
-fi
-
-echo "MROSM: ($chkKEEPTILES) $txtKEEPTILES"
-
-if [[ "$chk1" == *"$txtGMAPSUPP"* ]]; then
-
-	chkGMAPSUPP=1
-
-else
-
-	chkGMAPSUPP=0
-
-fi
-
-echo "MROSM: ($chkGMAPSUPP) $txtGMAPSUPP"
-
-if [[ "$chk1" == *"$txtSETTINGS"* ]]; then
-
-	chkSETTINGS=1
-
-else
-
-	chkSETTINGS=0
-
-fi
-
-echo "MROSM: ($chkSETTINGS) $txtSETTINGS"
-
-if [[ "$chk1" == *"$txtSHUTDOWN"* ]]; then
-
-	chkSHUTDOWN=1
-
-else
-
-	chkSHUTDOWN=0
-
-fi
-
-echo "MROSM: ($chkSHUTDOWN) $txtSHUTDOWN"
-echo ""
 
 if [ "$chkUPDATE" == "1" ] || [ "$chkCUTPOLY" == "1" ]; then
 
-	echo "MROSM: Bitte .poly Datei auswählen"
-
-	obPOLY=$(zenity --file-selection \
-		--title="Auswahl .poly Datei" \
-		--file-filter="*.poly" --filename="$obPOLY" 2> /dev/null)
+	
 
 	if [ "$obPOLY" == "" ]; then
+		echo "MROSM: Bitte .poly Datei auswählen"
+
+		obPOLY=$(zenity --file-selection \
+			--title="Auswahl .poly Datei" \
+			--file-filter="*.poly" --filename="$obPOLY" 2> /dev/null)
 
 		zenity --notification \
 			--text="Du hast keine .poly Datei ausgewählt." 2> /dev/null
 		
 		echo "MROSM: Du hast keine .poly Datei ausgewählt. "
-	
-	else
 
-		echo "MROSM: .poly-Datei $obPOLY"
-	
 	fi
+	
+	echo "MROSM: .poly-Datei $obPOLY"
 	
 	echo ""
 
@@ -276,13 +277,13 @@ fi
 
 if [ "$chkKEEPTILES" == "1" ]; then
 
-	echo "MROSM: Bitte temporären gbasemap tiles Ordner auswählen"
-	
-	obTILES=$(zenity --file-selection \
-		--title="Auswahl temporärer gbasemap tiles Ordner" \
-		--directory --filename="$obTILES" 2> /dev/null)
-	
 	if [ "$obTILES" == "" ]; then
+	
+		echo "MROSM: Bitte temporären gbasemap tiles Ordner auswählen"
+
+		obTILES=$(zenity --file-selection \
+			--title="Auswahl temporärer gbasemap tiles Ordner" \
+			--directory --filename="$obTILES" 2> /dev/null)
 
 		obTILES=$HOME"/MROSM/tiles/gbasemap"
 	
@@ -293,113 +294,111 @@ if [ "$chkKEEPTILES" == "1" ]; then
 fi
 
 echo " "
-echo "MROSM: Bitte splitter*.zip auswählen"
 
-obSPLITTER=$(zenity --file-selection \
-	--title="Auswahl splitter*.zip" \
-	--file-filter='*splitter*.zip' --filename="$obSPLITTER" 2> /dev/null)
 
-	if [ "$obSPLITTER" == "" ]; then
+if [ "$obSPLITTER" == "" ]; then
 
-		zenity --notification \
-			--text="Du hast splitter*.zip nicht ausgewählt." 2> /dev/null
-		
-		echo "MROSM: Du hast splitter*.zip nicht ausgewählt. "
-	
-	else
+	echo "MROSM: Bitte splitter*.zip auswählen"
 
-		echo "MROSM: Splitter $obSPLITTER"
-	
-	fi
+	obSPLITTER=$(zenity --file-selection \
+		--title="Auswahl splitter*.zip" \
+		--file-filter='*splitter*.zip' --filename="$obSPLITTER" 2> /dev/null)
 
-echo " "
-echo "MROSM: Bitte mkgmap*.zip auswählen"
+	zenity --notification \
+		--text="Du hast splitter*.zip nicht ausgewählt." 2> /dev/null
 
-obMKGMAP=$(zenity --file-selection \
-	--title="Auswahl mkgmap*.zip" \
-	--file-filter='*mkgmap*.zip' --filename="$obMKGMAP" 2> /dev/null)
+	echo "MROSM: Du hast splitter*.zip nicht ausgewählt. "
 
-	if [ "$obMKGMAP" == "" ]; then
+fi
 
-		zenity --notification \
-			--text="Du hast mkgmap*.zip nicht ausgewählt." 2> /dev/null
-		
-		echo "MROSM: Du hast mkgmap*.zip nicht ausgewählt. "
-	
-	else
-
-		echo "MROSM: Mkgmap $obMKGMAP"
-	
-	fi
+echo "MROSM: Splitter $obSPLITTER"
 
 echo " "
-echo "MROSM: Bitte bounds*.zip auswählen"
 
-obBOUNDS=$(zenity --file-selection \
-	--title="Auswahl bounds*.zip" \
-	--file-filter='*bounds*.zip' --filename="$obBOUNDS" 2> /dev/null)
+if [ "$obMKGMAP" == "" ]; then
 
-	if [ "$obBOUNDS" == "" ]; then
+	echo "MROSM: Bitte mkgmap*.zip auswählen"
 
-		zenity --notification \
-			--text="Du hast bounds*.zip nicht ausgewählt." 2> /dev/null
-		
-		echo "MROSM: Du hast bounds*.zip nicht ausgewählt. "
+	obMKGMAP=$(zenity --file-selection \
+		--title="Auswahl mkgmap*.zip" \
+		--file-filter='*mkgmap*.zip' --filename="$obMKGMAP" 2> /dev/null)
+
+	zenity --notification \
+		--text="Du hast mkgmap*.zip nicht ausgewählt." 2> /dev/null
+
+	echo "MROSM: Du hast mkgmap*.zip nicht ausgewählt. "
+
+fi
 	
-	else
+echo "MROSM: Mkgmap $obMKGMAP"
 
-		echo "MROSM: Bounds $obBOUNDS"
+echo " "
+
+
+if [ "$obBOUNDS" == "" ]; then
+
+	echo "MROSM: Bitte bounds*.zip auswählen"
+
+	obBOUNDS=$(zenity --file-selection \
+		--title="Auswahl bounds*.zip" \
+		--file-filter='*bounds*.zip' --filename="$obBOUNDS" 2> /dev/null)
+
+	zenity --notification \
+		--text="Du hast bounds*.zip nicht ausgewählt." 2> /dev/null
+
+	echo "MROSM: Du hast bounds*.zip nicht ausgewählt. "
+
+fi
 	
-	fi
+echo "MROSM: Bounds $obBOUNDS"
 
 echo ""
 echo "MROSM: Bitte sea*.zip auswählen"
 
-obSEA=$(zenity --file-selection \
-	--title="Auswahl sea*.zip" \
-	--file-filter='*sea*.zip' --filename="$obSEA" 2> /dev/null)
+if [ "$obSEA" == "" ]; then
 
-	if [ "$obSEA" == "" ]; then
-	
-		zenity --notification \
-			--text="Du hast sea*.zip nicht ausgewählt." 2> /dev/null
-		
-		echo "MROSM: Du hast sea*.zip nicht ausgewählt. "
-	
-	else
+	obSEA=$(zenity --file-selection \
+		--title="Auswahl sea*.zip" \
+		--file-filter='*sea*.zip' --filename="$obSEA" 2> /dev/null)
 
-		echo "MROSM: Sea $obSEA"
-	
-	fi
+	zenity --notification \
+		--text="Du hast sea*.zip nicht ausgewählt." 2> /dev/null
+
+	echo "MROSM: Du hast sea*.zip nicht ausgewählt. "
+
+fi
+
+echo "MROSM: Sea $obSEA"
 
 echo ""
-echo "MROSM: Bitte MotoRoute style*.zip auswählen"
 
-obSTYLE=$(zenity --file-selection \
-	--title="Auswahl MotoRoute style*.zip" \
-	--file-filter='*style*.zip' --filename="$obSTYLE" 2> /dev/null)
 
-	if [ "$obSTYLE" == "" ]; then
-	
-		zenity --notification \
-			--text="Du hast MotoRoute *style*.zip nicht ausgewählt." 2> /dev/null
-		
-		echo "MROSM: Du hast MotoRoute *style*.zip nicht ausgewählt. "
-	
-	else
+if [ "$obSTYLE" == "" ]; then
 
-		echo "MROSM: MotoRoute Style $obSTYLE"
+	echo "MROSM: Bitte MotoRoute style*.zip auswählen"
+
+	obSTYLE=$(zenity --file-selection \
+		--title="Auswahl MotoRoute style*.zip" \
+		--file-filter='*style*.zip' --filename="$obSTYLE" 2> /dev/null)
+
+	zenity --notification \
+		--text="Du hast MotoRoute *style*.zip nicht ausgewählt." 2> /dev/null
+
+	echo "MROSM: Du hast MotoRoute *style*.zip nicht ausgewählt. "
 	
-	fi
+fi
+
+echo "MROSM: MotoRoute Style $obSTYLE"
 
 echo ""
-txfFID=$(zenity --entry \
-	--text="Family ID (Kein Eintrag = FID wird berechnet)" \
-	--title="MotoRoute OpenStreetMap »Kartenbäckerei«" \
-	--cancel-label="berechnen" \
-	--width=500 --height=50 2> /dev/null)
+
 
 if [ "$txfFID" == "" ]; then
+	txfFID=$(zenity --entry \
+		--text="Family ID (Kein Eintrag = FID wird berechnet)" \
+		--title="MotoRoute OpenStreetMap »Kartenbäckerei«" \
+		--cancel-label="berechnen" \
+		--width=500 --height=50 2> /dev/null)
 
 	echo "MROSM: Family ID wird berechnet"
 
@@ -435,17 +434,18 @@ else
 
 fi
 
-rbCP=$(zenity --list --radiolist \
-	--text "Standard-Codepage latin1" \
-	--column "Auswahl" --column "Codepage" \
-	$setCP1 "$txtCP1" \
-	$setCP2 "$txtCP2" \
-	--title="MotoRoute OpenStreetMap »Kartenbäckerei«" \
-	--cancel-label="latin1" \
-	--width=400 --height=200 2> /dev/null)
 
 if [ "$rbCP" == "" ]; then
 
+	rbCP=$(zenity --list --radiolist \
+		--text "Standard-Codepage latin1" \
+		--column "Auswahl" --column "Codepage" \
+		$setCP1 "$txtCP1" \
+		$setCP2 "$txtCP2" \
+		--title="MotoRoute OpenStreetMap »Kartenbäckerei«" \
+		--cancel-label="latin1" \
+		--width=400 --height=200 2> /dev/null)
+		
 	rbCP=$txtCP1
 
 fi
