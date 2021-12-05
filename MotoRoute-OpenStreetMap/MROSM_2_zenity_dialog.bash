@@ -9,7 +9,7 @@ if [ -f "$APPSUPP/MROSM_settings" ]; then
 	i=1
 	while read LINE
 	do
-		#echo $i":"${LINE}
+		echo $i":"${LINE}
 		declare "input$i=${LINE}"
 		((i+=1))
 	done < "$APPSUPP/MROSM_settings"
