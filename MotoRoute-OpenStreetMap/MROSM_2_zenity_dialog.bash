@@ -9,30 +9,31 @@ if [ -f "$APPSUPP/MROSM_settings" ]; then
 	i=1
 	while read LINE
 	do
-		echo $i":"${LINE}
-		declare "input$i=${LINE}"
+		echo "$i"":""${LINE}"
+		# declare input"$i"="${LINE}"
+		inputx[$i]="${LINE}"
 		((i+=1))
 	done < "$APPSUPP/MROSM_settings"
 
-	obPROJ=$input1
-	obFILE=$input2
-	chkUPDATE=$input3
-	chkKEEPTEMP=$input4
-	chkCUTPOLY=$input5
-	obPOLY=$input6
-    obTILES=$input7
-	obBOUNDS=$input8
-	obSEA=$input9
-
-    obSPLITTER=$input10
-    obMKGMAP=$input11
-    chkKEEPTILES=$input12
-    chkGMAPSUPP=$input13
-    txfFID=$input14
-    rbCP=$input15
-	obSTYLE=$input16
-
-	chkSETTINGS=$input17
+	obPROJ=${inputx[1]}
+	obFILE=${inputx[2]}
+	chkUPDATE=${inputx[3]}
+	chkKEEPTEMP=${inputx[4]}
+	chkCUTPOLY=${inputx[5]}
+	obPOLY=${inputx[6]}
+  	obTILES=${inputx[7]}
+	obBOUNDS=${inputx[8]}
+	obSEA=${inputx[9]}
+   	obSPLITTER=${inputx[10]}
+	obMKGMAP=${inputx[11]}
+	chkKEEPTILES=${inputx[12]}
+  	chkGMAPSUPP=${inputx[13]}
+ 	txfFID=${inputx[14]}
+	rbCP=${inputx[15]}
+	obSTYLE=${inputx[16]}
+	chkSETTINGS=${inputx[17]}
+	
+	echo "MROSM_2_zenity_dialog.bash: MROSM_settings found and read"
 else
 	echo "MROSM_2_zenity_dialog.bash: MROSM_settings not found"
 fi
