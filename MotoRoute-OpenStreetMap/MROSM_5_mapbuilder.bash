@@ -2,6 +2,8 @@
 
 # Gernot Skottke, 30.04.2021
 
+echo "Execute MROSM_5_mapbuilder.bash"
+
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Include MROSM_functions.bash
