@@ -76,7 +76,7 @@ if [ -d "$GBASEMAPtiles" ]; then
 	
 fi
 
-mkdir "$GBASEMAPtiles"
+mkdir -p "$GBASEMAPtiles"
 
 # Ubuntu-Linux-Subsystem (Windows 10)
 if [[ "$(uname -a)" = *"Microsoft"* ]]; then
