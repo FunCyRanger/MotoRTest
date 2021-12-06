@@ -2,12 +2,12 @@ name: Haskell CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ test ]
   pull_request:
-    branches: [ main ]
+    branches: [ test ]
 
 jobs:
-  build:
+  build-lin:
 
     runs-on: ubuntu-latest
 
@@ -49,6 +49,50 @@ jobs:
       run: | 
         bash ./MROSM_1_script.bash
       shell: bash
+
+  build-win:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/cache@v2
+      with:
+        path: /home/runner/work/MotoRTest/MotoRTest/MotoRoute-OpenStreetMap/wget
+        # Look to see if there is a cache hit for the corresponding requirements file
+        key: zip
+        restore-keys: |
+          mkgmap-r4827.zip
+
+    - name: Install dependencies
+      working-directory: MotoRoute-OpenStreetMap
+      run: | 
+        sudo apt-get install osmctools
+        sudo apt-get install default-jre
+        sudo apt-get install unzip
+        
+    - name: wget tools
+      working-directory: MotoRoute-OpenStreetMap
+      run: | 
+        mkdir -p wget
+        cd wget
+        wget -nc https://www.mkgmap.org.uk/download/mkgmap-r4827.zip
+        wget -nc https://www.mkgmap.org.uk/download/splitter-r645.zip
+        wget -nc https://my.cloudme.com/v1/ws2/:scotti/:MotoRouteOpenStreetMap/mrosm-style-r022.zip
+        wget -nc http://download.geofabrik.de/europe/liechtenstein-latest.osm.pbf
+        wget -nc http://download.geofabrik.de/europe/liechtenstein.poly
+        dirs -l
+        ls
+ #       wget -nc http://osm.thkukuk.de/data/bounds-latest.zip
+ #       wget -nc http://osm.thkukuk.de/data/sea-latest.zip
+        
+    - name: Run script
+      working-directory: MotoRoute-OpenStreetMap
+#     "bash" command needed before script name
+      run: | 
+        bash ./MROSM_1_script.bash
+      shell: bash
+
 
 #    - name: Cache
 #      uses: actions/cache@v1
