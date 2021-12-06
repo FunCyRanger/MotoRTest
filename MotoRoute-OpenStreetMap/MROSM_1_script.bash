@@ -353,5 +353,5 @@ if [ "$chkSHUTDOWN" == "1" ]; then
 	
 fi
 	
-read -n1 -s
+# read -n1 -s
 exit
