@@ -2,6 +2,8 @@
 
 # Gernot Skottke, 02.05.2020
 
+echo "Execute MROSM_7_cleanup.bash"
+
 # cleanup
 if [ -d ./tmp ]; then
 

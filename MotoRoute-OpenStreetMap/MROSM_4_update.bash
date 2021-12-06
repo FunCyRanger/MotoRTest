@@ -2,6 +2,8 @@
 
 # Gernot Skottke, 07.04.2019
 
+echo "Execute MROSM_4_update.bash"
+
 # variables
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 

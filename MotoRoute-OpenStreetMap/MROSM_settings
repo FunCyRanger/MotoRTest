@@ -1,18 +1,18 @@
-./
-liechtenstein-latest.osm.pbf
+MROSM
+/home/runner/work/MotoRTest/MotoRTest/MotoRoute-OpenStreetMap/wget/liechtenstein-latest.osm.pbf
 0
 0
 0
-liechtenstein.poly
+/home/runner/work/MotoRTest/MotoRTest/MotoRoute-OpenStreetMap/wget/liechtenstein.poly
 
-bounds-latest.zip
-sea-latest.zip
-splitter-r645.zip
-mkgmap-r4827.zip
+/home/runner/work/MotoRTest/MotoRTest/MotoRoute-OpenStreetMap/wget/bounds-latest.zip
+/home/runner/work/MotoRTest/MotoRTest/MotoRoute-OpenStreetMap/wget/sea-latest.zip
+/home/runner/work/MotoRTest/MotoRTest/MotoRoute-OpenStreetMap/wget/splitter-r645.zip
+/home/runner/work/MotoRTest/MotoRTest/MotoRoute-OpenStreetMap/wget/mkgmap-r4827.zip
 0
 0
 
 latin1
-mrosm-style-r022.zip
+/home/runner/work/MotoRTest/MotoRTest/MotoRoute-OpenStreetMap/wget/mrosm-style-r022.zip
 1
 0

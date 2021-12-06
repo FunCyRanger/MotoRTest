@@ -2,6 +2,8 @@
 
 # Gernot Skottke, 05.05.2021
 
+echo "Execute MROSM_1_script.bash"
+
 export TERM=${TERM:-dumb}
 export PATH=.:$PATH
 
@@ -10,6 +12,8 @@ export PATH=.:$PATH
 # MYDIRwin=$(echo `wslpath -w "$MYDIR" 2> /dev/null`)
 # MROSMDIR="$HOME"
 MROSMDIR="$PWD"
+echo "$MROSMDIR"
+MYDIR=$MROSMDIR
 
 # variables
 OSMUPDATE=0.4.5
@@ -65,6 +69,7 @@ elif [ "$(uname -s)" == "Linux" ]
 	then
 
 	APPSUPP="$MROSMDIR"
+	echo "AppSupp4Linux: $APPSUPP"
 	
 	wgetdotbar=bar
 
@@ -153,7 +158,9 @@ elif [ "$(uname -s)" == "Linux" ] || [ "$(uname)" == "Darwin" ]; then
 		fi
 		
 		cp "$MYDIR"/MROSM_settings_default "$APPSUPP"/MROSM_settings
-	
+		echo "No settings file found, default sttings copied"
+	else
+		echo "Settings found"
 	fi
 
 fi
@@ -346,5 +353,5 @@ if [ "$chkSHUTDOWN" == "1" ]; then
 	
 fi
 	
-read -n1 -s
+# read -n1 -s
 exit

@@ -2,6 +2,8 @@
 
 # Gernot Skottke, 30.04.2021
 
+echo "Execute MROSM_5_mapbuilder.bash"
+
 MYDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Include MROSM_functions.bash
@@ -74,7 +76,7 @@ if [ -d "$GBASEMAPtiles" ]; then
 	
 fi
 
-mkdir "$GBASEMAPtiles"
+mkdir -p "$GBASEMAPtiles"
 
 # Ubuntu-Linux-Subsystem (Windows 10)
 if [[ "$(uname -a)" = *"Microsoft"* ]]; then
