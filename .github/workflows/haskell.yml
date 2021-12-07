@@ -2,9 +2,9 @@ name: Haskell CI
 
 on:
   push:
-    branches: [ test ]
+    branches: [ test4win ]
   pull_request:
-    branches: [ test ]
+    branches: [ test4win ]
 
 jobs:
   build-lin:
